@@ -8,9 +8,14 @@ import NotFound from './NotFound';
 const ServiceDetail = () => {
     const { id } = useParams();
     const [openAccordion, setOpenAccordion] = useState(null);
+    const [openProduct, setOpenProduct] = useState(null);
 
     const toggleAccordion = (index) => {
         setOpenAccordion(openAccordion === index ? null : index);
+    };
+
+    const toggleProduct = (index) => {
+        setOpenProduct(openProduct === index ? null : index);
     };
 
     const services = {
@@ -148,9 +153,32 @@ const ServiceDetail = () => {
                 { step: "05", title: "リリース・保守", desc: "本番公開後も、安定稼働のためのサポートを行います。" }
             ],
             faq: [
-                { q: "開発言語は何を使いますか？", a: "主にTypeScript (React/Next.js), Go, Python, PHPなどを使用しますが、要件に合わせて最適選定します。" },
+                { q: "開発言語は何を使いますか？", a: "上記のTechnology Stackに記載の通り、フロントエンドからバックエンド、AI/ML、クラウドインフラまで幅広く対応可能です。特定の技術に縛られず、プロジェクトの要件・規模・運用体制に最適な技術を選定します。" },
                 { q: "着手金はかかりますか？", a: "通常の受託開発では着手金を頂いておりますが、補助金を活用した開発の場合は、補助金の種類によって着手金が発生する場合がございます。詳細はお問い合わせください。" },
                 { q: "保守運用のみの依頼は可能ですか？", a: "はい、可能です。他社開発システムの引き継ぎもご相談ください。" }
+            ],
+            products: [
+                {
+                    name: "LiteWEB+",
+                    tagline: "最短1日納品の高品質Webサイト制作",
+                    desc: "補助金活用可能な格安Webサイト制作サービス。テンプレートベースで高速納品しながらも、カスタマイズ性と品質を両立。IT導入補助金との組み合わせで実質負担を大幅削減。",
+                    features: ["最短1日納品", "補助金活用対応", "レスポンシブ対応", "SEO最適化済み"],
+                    url: "https://litewebplus.com/"
+                },
+                {
+                    name: "TaskMate AI",
+                    tagline: "AIがタスク管理を自動化",
+                    desc: "GPT-4を活用したインテリジェントなタスク管理ツール。自然言語でタスクを入力するだけで、優先度の自動判定、サブタスクの分解、リマインダー設定までAIが自動で行います。",
+                    features: ["GPT-4搭載", "自然言語入力", "優先度自動判定", "チーム連携機能"],
+                    url: "https://taskmateai.net/"
+                },
+                {
+                    name: "SEO TURBO",
+                    tagline: "AIドリブンSEO最適化プラットフォーム",
+                    desc: "最新のAI技術を活用したSEO分析・最適化ツール。競合分析、キーワード提案、コンテンツ改善提案をワンストップで提供。検索順位の向上をデータドリブンでサポート。",
+                    features: ["AI競合分析", "キーワード自動提案", "コンテンツスコアリング", "順位トラッキング"],
+                    url: "https://seoturbo.org/"
+                }
             ]
         },
         'subsidy': {
@@ -344,6 +372,106 @@ const ServiceDetail = () => {
                                             </div>
                                         ))}
                                     </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </section>
+                )}
+
+                {/* Products (Only for System Development) */}
+                {service.products && (
+                    <section className="mb-40">
+                        <div className="text-center mb-20">
+                            <h2 className="text-3xl md:text-4xl font-serif font-medium text-ikemen-text mb-4">OUR PRODUCTS</h2>
+                            <p className="text-gray-400 font-mono text-sm tracking-widest">自社プロダクト一覧</p>
+                            <div className="w-px h-12 bg-ikemen-gold mx-auto mt-6"></div>
+                        </div>
+
+                        <div className="space-y-8">
+                            {service.products.map((product, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                                    className="bg-white/60 backdrop-blur-sm border border-gray-200 rounded-2xl overflow-hidden"
+                                >
+                                    {/* Product Header */}
+                                    <button
+                                        onClick={() => toggleProduct(index)}
+                                        className="w-full flex flex-col md:flex-row md:items-center justify-between p-8 md:p-10 text-left hover:bg-gray-50/50 transition-colors"
+                                    >
+                                        <div className="flex-1">
+                                            <div className="flex items-center gap-4 mb-3">
+                                                <span className="text-4xl font-serif font-bold text-gray-200">0{index + 1}</span>
+                                                <h3 className="text-2xl md:text-3xl font-bold text-ikemen-text">{product.name}</h3>
+                                            </div>
+                                            <p className="text-ikemen-gold font-medium mb-4">{product.tagline}</p>
+                                            <p className="text-gray-600 font-serif leading-relaxed mb-4 max-w-2xl">{product.desc}</p>
+                                            <div className="flex flex-wrap gap-2">
+                                                {product.features.map((feature, i) => (
+                                                    <span key={i} className="text-xs font-mono bg-gray-100 text-gray-600 px-3 py-1 rounded-full">
+                                                        {feature}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-4 mt-6 md:mt-0 md:ml-8">
+                                            <span className="text-sm font-bold text-ikemen-gold tracking-widest">
+                                                {openProduct === index ? 'CLOSE PREVIEW' : 'OPEN PREVIEW'}
+                                            </span>
+                                            {openProduct === index ? (
+                                                <ChevronUp className="w-6 h-6 text-ikemen-gold" />
+                                            ) : (
+                                                <ChevronDown className="w-6 h-6 text-gray-400" />
+                                            )}
+                                        </div>
+                                    </button>
+
+                                    {/* Product Preview (iframe) */}
+                                    <AnimatePresence>
+                                        {openProduct === index && (
+                                            <motion.div
+                                                initial={{ height: 0, opacity: 0 }}
+                                                animate={{ height: "auto", opacity: 1 }}
+                                                exit={{ height: 0, opacity: 0 }}
+                                                transition={{ duration: 0.4 }}
+                                                className="border-t border-gray-200"
+                                            >
+                                                <div className="p-4 bg-gray-100">
+                                                    <div className="flex items-center justify-between mb-4">
+                                                        <div className="flex items-center gap-2">
+                                                            <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                                                            <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                                            <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                                                        </div>
+                                                        <div className="flex-1 mx-4">
+                                                            <div className="bg-white rounded-md px-4 py-2 text-sm text-gray-500 font-mono truncate">
+                                                                {product.url}
+                                                            </div>
+                                                        </div>
+                                                        <a
+                                                            href={product.url}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="flex items-center gap-2 text-sm font-bold text-ikemen-gold hover:underline"
+                                                        >
+                                                            新しいタブで開く <ArrowRight className="w-4 h-4" />
+                                                        </a>
+                                                    </div>
+                                                    <div className="w-full h-[600px] bg-white rounded-lg overflow-hidden shadow-inner">
+                                                        <iframe
+                                                            src={product.url}
+                                                            title={product.name}
+                                                            className="w-full h-full border-0"
+                                                            loading="lazy"
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
                                 </motion.div>
                             ))}
                         </div>
