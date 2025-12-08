@@ -171,6 +171,139 @@ const About = () => {
                     </div>
                 </div>
 
+                {/* Mission Vision Value Section */}
+                <div className="mb-60">
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="text-center mb-24"
+                    >
+                        <span className="text-xs font-mono text-ikemen-gold tracking-[0.5em] uppercase mb-6 block">Mission Vision Value</span>
+                        <h2 className="text-5xl md:text-7xl font-serif font-medium text-ikemen-text tracking-tight">MVV</h2>
+                    </motion.div>
+
+                    {/* Mission */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="mb-32"
+                    >
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+                            <div className="lg:col-span-4">
+                                <span className="text-8xl md:text-9xl font-serif font-bold text-gray-100 leading-none block">01</span>
+                                <h3 className="text-2xl md:text-3xl font-serif font-medium text-ikemen-text mt-4">MISSION</h3>
+                                <p className="text-xs font-mono text-gray-400 tracking-widest mt-2">使命</p>
+                            </div>
+                            <div className="lg:col-span-8 border-l border-gray-200 pl-8 lg:pl-16">
+                                <h4 className="text-3xl md:text-5xl font-serif font-medium text-ikemen-text leading-tight mb-8">
+                                    「イケメンを構造化する。」
+                                </h4>
+                                <p className="text-lg md:text-xl text-gray-600 leading-loose font-serif">
+                                    世の中のあらゆるものは、カッコイイ<span className="font-mono text-ikemen-gold">(1)</span>かカッコよくない<span className="font-mono text-ikemen-gold">(0)</span>かで判断できる。<br />
+                                    我々はこの二元論の構造化基準を創り、世界標準にする。
+                                </p>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* Vision */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="mb-32"
+                    >
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+                            <div className="lg:col-span-4">
+                                <span className="text-8xl md:text-9xl font-serif font-bold text-gray-100 leading-none block">02</span>
+                                <h3 className="text-2xl md:text-3xl font-serif font-medium text-ikemen-text mt-4">VISION</h3>
+                                <p className="text-xs font-mono text-gray-400 tracking-widest mt-2">未来像</p>
+                            </div>
+                            <div className="lg:col-span-8 border-l border-gray-200 pl-8 lg:pl-16">
+                                <h4 className="text-2xl md:text-4xl font-serif font-medium text-ikemen-text leading-tight mb-8">
+                                    「魅力のOS。データとロジックで、<br className="hidden md:block" />イケメンを世界標準にする。」
+                                </h4>
+                                <p className="text-lg md:text-xl text-gray-600 leading-loose font-serif">
+                                    「カッコよくない」に終止符を打ち、ヒトの魅力をデータとロジックで再定義する、世界標準のバリュー・インフラとなる。
+                                </p>
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* Values */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-16">
+                            <div className="lg:col-span-4">
+                                <span className="text-8xl md:text-9xl font-serif font-bold text-gray-100 leading-none block">03</span>
+                                <h3 className="text-2xl md:text-3xl font-serif font-medium text-ikemen-text mt-4">VALUE</h3>
+                                <p className="text-xs font-mono text-gray-400 tracking-widest mt-2">価値観</p>
+                            </div>
+                            <div className="lg:col-span-8 border-l border-gray-200 pl-8 lg:pl-16">
+                                <p className="text-lg text-gray-500 font-serif mb-12">
+                                    我々が大切にする5つの行動指針
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {[
+                                {
+                                    num: "01",
+                                    title: "全方位80点主義",
+                                    desc: "外面・内面・経済。三位一体のバランスなくして、真のイケメンは成立しない。"
+                                },
+                                {
+                                    num: "02",
+                                    title: "0か1かで世界を測る",
+                                    desc: "「まあまあ」は存在しない。カッコイイか、カッコよくないか。二元論で構造を明確にする。"
+                                },
+                                {
+                                    num: "03",
+                                    title: "感覚をロジックに変換せよ",
+                                    desc: "曖昧な「センス」をデータとアルゴリズムに落とし込み、誰もが到達可能な設計図にする。"
+                                },
+                                {
+                                    num: "04",
+                                    title: "運用で美学を証明する",
+                                    desc: "瞬間的な輝きではなく、持続可能な成長システムを構築し、イケメンであり続けることを支える。"
+                                },
+                                {
+                                    num: "05",
+                                    title: "インフラになれ",
+                                    desc: "個人をプロデュースするのではなく、世界中が使える「イケメン製造OS」を提供する。"
+                                }
+                            ].map((value, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    className="group bg-white/60 backdrop-blur-sm border border-gray-100 p-8 hover:border-ikemen-gold/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
+                                >
+                                    <span className="text-5xl font-serif font-bold text-gray-100 group-hover:text-ikemen-gold/20 transition-colors duration-500">{value.num}</span>
+                                    <h4 className="text-xl font-serif font-medium text-ikemen-text mt-4 mb-4 group-hover:text-ikemen-gold transition-colors duration-300">
+                                        「{value.title}」
+                                    </h4>
+                                    <p className="text-sm text-gray-500 leading-relaxed font-serif">
+                                        {value.desc}
+                                    </p>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.div>
+                </div>
+
                 {/* Company Profile - Minimal List */}
                 <div className="max-w-4xl mx-auto">
                     <h3 className="text-xs font-mono text-gray-400 tracking-[0.3em] mb-12 uppercase text-center">Company Information</h3>
