@@ -189,8 +189,8 @@ const Home = () => (
         <div className="space-y-4">
           {[
             { date: '2025.12.08', category: 'RELEASE', title: '自社プロダクト「SEO TURBO」をリリースしました', url: 'https://seoturbo.org/' },
-            { date: '2025.12.08', category: 'RELEASE', title: '自社プロダクト「TaskMate AI」をリリースしました', url: 'https://taskmateai.net/' },
-            { date: '2025.12.08', category: 'RELEASE', title: '自社プロダクト「LiteWEB+」をリリースしました', url: 'https://litewebplus.com/' },
+            { date: '2025.10.01', category: 'RELEASE', title: '自社プロダクト「TaskMate AI」をリリースしました', url: 'https://taskmateai.net/' },
+            { date: '2025.05.22', category: 'RELEASE', title: '自社プロダクト「LiteWEB+」をリリースしました', url: 'https://litewebplus.com/' },
           ].map((news, i) => (
             <a key={i} href={news.url} target="_blank" rel="noopener noreferrer" className="group block relative">
               <div className="flex flex-col md:flex-row gap-6 items-start md:items-center p-6 hover:bg-white/50 rounded-xl transition-colors duration-300">
