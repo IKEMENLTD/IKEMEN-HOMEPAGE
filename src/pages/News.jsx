@@ -18,7 +18,7 @@ const newsData = [
         date: '2025.12.08',
         category: 'RELEASE',
         title: '自社プロダクト「TaskMate AI」をリリースしました',
-        content: 'GPT-4を活用したインテリジェントなタスク管理ツール。自然言語入力で優先度自動判定、サブタスク分解までAIが自動で行います。',
+        content: '最新AIを活用したインテリジェントなタスク管理ツール。自然言語入力で優先度自動判定、サブタスク分解までAIが自動で行います。',
         link: 'https://taskmateai.net/',
         external: true
     },
@@ -27,7 +27,7 @@ const newsData = [
         date: '2025.12.08',
         category: 'RELEASE',
         title: '自社プロダクト「LiteWEB+」をリリースしました',
-        content: '最短1日納品の高品質Webサイト制作サービス。補助金活用対応で実質負担を大幅削減可能です。',
+        content: '最短1日納品の高品質Webサイト制作サービス。中小企業・個人事業主のWeb集客を強力にサポートします。',
         link: 'https://litewebplus.com/',
         external: true
     },
