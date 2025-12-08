@@ -118,18 +118,47 @@ const Contact = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="bg-white/40 backdrop-blur-sm p-8 md:p-12 border border-gray-200"
                     >
-                        <form className="space-y-8">
+                        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" className="space-y-8">
+                            <input type="hidden" name="form-name" value="contact" />
+                            <p className="hidden">
+                                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                            </p>
                             <div>
-                                <label className="block text-xs font-mono text-gray-400 tracking-widest uppercase mb-2">Name</label>
-                                <input type="text" className="w-full bg-transparent border-b border-gray-300 py-3 text-ikemen-text focus:border-ikemen-gold focus:outline-none transition-colors" placeholder="お名前" />
+                                <label htmlFor="name" className="block text-xs font-mono text-gray-400 tracking-widest uppercase mb-2">Name <span className="text-red-400">*</span></label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    required
+                                    maxLength={100}
+                                    className="w-full bg-transparent border-b border-gray-300 py-3 text-ikemen-text focus:border-ikemen-gold focus:outline-none transition-colors"
+                                    placeholder="お名前"
+                                />
                             </div>
                             <div>
-                                <label className="block text-xs font-mono text-gray-400 tracking-widest uppercase mb-2">Email</label>
-                                <input type="email" className="w-full bg-transparent border-b border-gray-300 py-3 text-ikemen-text focus:border-ikemen-gold focus:outline-none transition-colors" placeholder="メールアドレス" />
+                                <label htmlFor="email" className="block text-xs font-mono text-gray-400 tracking-widest uppercase mb-2">Email <span className="text-red-400">*</span></label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    maxLength={254}
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                    className="w-full bg-transparent border-b border-gray-300 py-3 text-ikemen-text focus:border-ikemen-gold focus:outline-none transition-colors"
+                                    placeholder="メールアドレス"
+                                />
                             </div>
                             <div>
-                                <label className="block text-xs font-mono text-gray-400 tracking-widest uppercase mb-2">Message</label>
-                                <textarea rows="4" className="w-full bg-transparent border-b border-gray-300 py-3 text-ikemen-text focus:border-ikemen-gold focus:outline-none transition-colors resize-none" placeholder="お問い合わせ内容"></textarea>
+                                <label htmlFor="message" className="block text-xs font-mono text-gray-400 tracking-widest uppercase mb-2">Message <span className="text-red-400">*</span></label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="4"
+                                    required
+                                    maxLength={5000}
+                                    className="w-full bg-transparent border-b border-gray-300 py-3 text-ikemen-text focus:border-ikemen-gold focus:outline-none transition-colors resize-none"
+                                    placeholder="お問い合わせ内容"
+                                ></textarea>
                             </div>
                             <button type="submit" className="w-full bg-ikemen-text/80 text-white py-4 font-bold tracking-widest hover:bg-ikemen-gold/80 transition-colors duration-500 flex items-center justify-center gap-2 group backdrop-blur-sm">
                                 SEND MESSAGE <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
