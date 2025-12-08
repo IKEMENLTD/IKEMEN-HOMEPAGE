@@ -161,16 +161,17 @@ const ServiceDetail = () => {
                 {
                     name: "LiteWEB+",
                     tagline: "最短1日納品の高品質Webサイト制作",
-                    desc: "補助金活用可能な格安Webサイト制作サービス。テンプレートベースで高速納品しながらも、カスタマイズ性と品質を両立。IT導入補助金との組み合わせで実質負担を大幅削減。",
-                    features: ["最短1日納品", "補助金活用対応", "レスポンシブ対応", "SEO最適化済み"],
+                    desc: "格安Webサイト制作サービス。テンプレートベースで高速納品しながらも、カスタマイズ性と品質を両立。中小企業・個人事業主のWeb集客を強力にサポート。",
+                    features: ["最短1日納品", "レスポンシブ対応", "SEO最適化済み", "保守サポート付き"],
                     url: "https://litewebplus.com/"
                 },
                 {
                     name: "TaskMate AI",
                     tagline: "AIがタスク管理を自動化",
-                    desc: "GPT-4を活用したインテリジェントなタスク管理ツール。自然言語でタスクを入力するだけで、優先度の自動判定、サブタスクの分解、リマインダー設定までAIが自動で行います。",
-                    features: ["GPT-4搭載", "自然言語入力", "優先度自動判定", "チーム連携機能"],
-                    url: "https://taskmateai.net/"
+                    desc: "最新AIを活用したインテリジェントなタスク管理ツール。自然言語でタスクを入力するだけで、優先度の自動判定、サブタスクの分解、リマインダー設定までAIが自動で行います。",
+                    features: ["最新AI搭載", "自然言語入力", "優先度自動判定", "チーム連携機能"],
+                    url: "https://taskmateai.net/",
+                    noPreview: true
                 },
                 {
                     name: "SEO TURBO",
@@ -418,60 +419,76 @@ const ServiceDetail = () => {
                                             </div>
                                         </div>
                                         <div className="flex items-center gap-4 mt-6 md:mt-0 md:ml-8">
-                                            <span className="text-sm font-bold text-ikemen-gold tracking-widest">
-                                                {openProduct === index ? 'CLOSE PREVIEW' : 'OPEN PREVIEW'}
-                                            </span>
-                                            {openProduct === index ? (
-                                                <ChevronUp className="w-6 h-6 text-ikemen-gold" />
+                                            {product.noPreview ? (
+                                                <a
+                                                    href={product.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    onClick={(e) => e.stopPropagation()}
+                                                    className="flex items-center gap-2 text-sm font-bold text-ikemen-gold tracking-widest hover:underline"
+                                                >
+                                                    VIEW SITE <ArrowRight className="w-4 h-4" />
+                                                </a>
                                             ) : (
-                                                <ChevronDown className="w-6 h-6 text-gray-400" />
+                                                <>
+                                                    <span className="text-sm font-bold text-ikemen-gold tracking-widest">
+                                                        {openProduct === index ? 'CLOSE PREVIEW' : 'OPEN PREVIEW'}
+                                                    </span>
+                                                    {openProduct === index ? (
+                                                        <ChevronUp className="w-6 h-6 text-ikemen-gold" />
+                                                    ) : (
+                                                        <ChevronDown className="w-6 h-6 text-gray-400" />
+                                                    )}
+                                                </>
                                             )}
                                         </div>
                                     </button>
 
-                                    {/* Product Preview (iframe) */}
-                                    <AnimatePresence>
-                                        {openProduct === index && (
-                                            <motion.div
-                                                initial={{ height: 0, opacity: 0 }}
-                                                animate={{ height: "auto", opacity: 1 }}
-                                                exit={{ height: 0, opacity: 0 }}
-                                                transition={{ duration: 0.4 }}
-                                                className="border-t border-gray-200"
-                                            >
-                                                <div className="p-4 bg-gray-100">
-                                                    <div className="flex items-center justify-between mb-4">
-                                                        <div className="flex items-center gap-2">
-                                                            <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                                                            <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                                                            <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                                                        </div>
-                                                        <div className="flex-1 mx-4">
-                                                            <div className="bg-white rounded-md px-4 py-2 text-sm text-gray-500 font-mono truncate">
-                                                                {product.url}
+                                    {/* Product Preview (iframe) - only for products without noPreview */}
+                                    {!product.noPreview && (
+                                        <AnimatePresence>
+                                            {openProduct === index && (
+                                                <motion.div
+                                                    initial={{ height: 0, opacity: 0 }}
+                                                    animate={{ height: "auto", opacity: 1 }}
+                                                    exit={{ height: 0, opacity: 0 }}
+                                                    transition={{ duration: 0.4 }}
+                                                    className="border-t border-gray-200"
+                                                >
+                                                    <div className="p-4 bg-gray-100">
+                                                        <div className="flex items-center justify-between mb-4">
+                                                            <div className="flex items-center gap-2">
+                                                                <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                                                                <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                                                <div className="w-3 h-3 rounded-full bg-green-400"></div>
                                                             </div>
+                                                            <div className="flex-1 mx-4">
+                                                                <div className="bg-white rounded-md px-4 py-2 text-sm text-gray-500 font-mono truncate">
+                                                                    {product.url}
+                                                                </div>
+                                                            </div>
+                                                            <a
+                                                                href={product.url}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="flex items-center gap-2 text-sm font-bold text-ikemen-gold hover:underline"
+                                                            >
+                                                                新しいタブで開く <ArrowRight className="w-4 h-4" />
+                                                            </a>
                                                         </div>
-                                                        <a
-                                                            href={product.url}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="flex items-center gap-2 text-sm font-bold text-ikemen-gold hover:underline"
-                                                        >
-                                                            新しいタブで開く <ArrowRight className="w-4 h-4" />
-                                                        </a>
+                                                        <div className="w-full h-[600px] bg-white rounded-lg overflow-hidden shadow-inner">
+                                                            <iframe
+                                                                src={product.url}
+                                                                title={product.name}
+                                                                className="w-full h-full border-0"
+                                                                loading="lazy"
+                                                            />
+                                                        </div>
                                                     </div>
-                                                    <div className="w-full h-[600px] bg-white rounded-lg overflow-hidden shadow-inner">
-                                                        <iframe
-                                                            src={product.url}
-                                                            title={product.name}
-                                                            className="w-full h-full border-0"
-                                                            loading="lazy"
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    )}
                                 </motion.div>
                             ))}
                         </div>
