@@ -173,16 +173,20 @@ const About = () => {
 
                 {/* Mission Vision Value Section */}
                 <div className="mb-60">
+                    {/* Section Header */}
                     <motion.div
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-center mb-24"
+                        className="text-center mb-16"
                     >
-                        <span className="text-xs font-mono text-ikemen-gold tracking-[0.5em] uppercase mb-6 block">Mission Vision Value</span>
+                        <span className="text-xs font-mono text-ikemen-gold tracking-[0.5em] uppercase mb-8 block">Mission Vision Value</span>
                         <h2 className="text-5xl md:text-7xl font-serif font-medium text-ikemen-text tracking-tight">MVV</h2>
                     </motion.div>
+
+                    {/* Divider */}
+                    <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mb-32"></div>
 
                     {/* Mission */}
                     <motion.div
@@ -190,25 +194,30 @@ const About = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="mb-32"
+                        className="mb-40 lg:mb-48"
                     >
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
                             <div className="lg:col-span-4">
-                                <span className="text-8xl md:text-9xl font-serif font-bold text-gray-100 leading-none block">01</span>
-                                <h3 className="text-2xl md:text-3xl font-serif font-medium text-ikemen-text mt-4">MISSION</h3>
-                                <p className="text-xs font-mono text-gray-400 tracking-widest mt-2">使命</p>
+                                <span className="text-[7rem] md:text-[10rem] font-serif font-bold text-gray-100/80 leading-none block -mb-4">01</span>
+                                <h3 className="text-3xl md:text-4xl font-serif font-medium text-ikemen-text mt-6">MISSION</h3>
+                                <p className="text-sm font-mono text-gray-400 tracking-widest mt-3 uppercase">使命</p>
                             </div>
-                            <div className="lg:col-span-8 border-l border-gray-200 pl-8 lg:pl-16">
-                                <h4 className="text-3xl md:text-5xl font-serif font-medium text-ikemen-text leading-tight mb-8">
+                            <div className="lg:col-span-8 lg:border-l lg:border-gray-200 lg:pl-20 pt-4 lg:pt-8">
+                                <h4 className="text-3xl md:text-5xl font-serif font-medium text-ikemen-text leading-snug mb-10">
                                     「イケメンを構造化する。」
                                 </h4>
-                                <p className="text-lg md:text-xl text-gray-600 leading-loose font-serif">
-                                    世の中のあらゆるものは、カッコイイ<span className="font-mono text-ikemen-gold">(1)</span>かカッコよくない<span className="font-mono text-ikemen-gold">(0)</span>かで判断できる。<br />
+                                <p className="text-lg md:text-xl text-gray-600 leading-[2] font-serif">
+                                    世の中のあらゆるものは、カッコイイ<span className="font-mono text-ikemen-gold font-bold">(1)</span>か<br className="hidden md:block" />カッコよくない<span className="font-mono text-ikemen-gold font-bold">(0)</span>かで判断できる。
+                                </p>
+                                <p className="text-lg md:text-xl text-gray-600 leading-[2] font-serif mt-6">
                                     我々はこの二元論の構造化基準を創り、世界標準にする。
                                 </p>
                             </div>
                         </div>
                     </motion.div>
+
+                    {/* Divider */}
+                    <div className="w-24 h-px bg-ikemen-gold/30 mx-auto mb-40 lg:mb-48"></div>
 
                     {/* Vision */}
                     <motion.div
@@ -216,24 +225,29 @@ const About = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="mb-32"
+                        className="mb-40 lg:mb-48"
                     >
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
                             <div className="lg:col-span-4">
-                                <span className="text-8xl md:text-9xl font-serif font-bold text-gray-100 leading-none block">02</span>
-                                <h3 className="text-2xl md:text-3xl font-serif font-medium text-ikemen-text mt-4">VISION</h3>
-                                <p className="text-xs font-mono text-gray-400 tracking-widest mt-2">未来像</p>
+                                <span className="text-[7rem] md:text-[10rem] font-serif font-bold text-gray-100/80 leading-none block -mb-4">02</span>
+                                <h3 className="text-3xl md:text-4xl font-serif font-medium text-ikemen-text mt-6">VISION</h3>
+                                <p className="text-sm font-mono text-gray-400 tracking-widest mt-3 uppercase">未来像</p>
                             </div>
-                            <div className="lg:col-span-8 border-l border-gray-200 pl-8 lg:pl-16">
-                                <h4 className="text-2xl md:text-4xl font-serif font-medium text-ikemen-text leading-tight mb-8">
-                                    「魅力のOS。データとロジックで、<br className="hidden md:block" />イケメンを世界標準にする。」
+                            <div className="lg:col-span-8 lg:border-l lg:border-gray-200 lg:pl-20 pt-4 lg:pt-8">
+                                <h4 className="text-2xl md:text-4xl font-serif font-medium text-ikemen-text leading-snug mb-10">
+                                    「魅力のOS。<br className="md:hidden" />データとロジックで、<br />イケメンを世界標準にする。」
                                 </h4>
-                                <p className="text-lg md:text-xl text-gray-600 leading-loose font-serif">
-                                    「カッコよくない」に終止符を打ち、ヒトの魅力をデータとロジックで再定義する、世界標準のバリュー・インフラとなる。
+                                <p className="text-lg md:text-xl text-gray-600 leading-[2] font-serif">
+                                    「カッコよくない」に終止符を打ち、<br className="hidden md:block" />
+                                    ヒトの魅力をデータとロジックで再定義する、<br className="hidden md:block" />
+                                    世界標準のバリュー・インフラとなる。
                                 </p>
                             </div>
                         </div>
                     </motion.div>
+
+                    {/* Divider */}
+                    <div className="w-24 h-px bg-ikemen-gold/30 mx-auto mb-40 lg:mb-48"></div>
 
                     {/* Values */}
                     <motion.div
@@ -242,20 +256,20 @@ const About = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-16">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start mb-20">
                             <div className="lg:col-span-4">
-                                <span className="text-8xl md:text-9xl font-serif font-bold text-gray-100 leading-none block">03</span>
-                                <h3 className="text-2xl md:text-3xl font-serif font-medium text-ikemen-text mt-4">VALUE</h3>
-                                <p className="text-xs font-mono text-gray-400 tracking-widest mt-2">価値観</p>
+                                <span className="text-[7rem] md:text-[10rem] font-serif font-bold text-gray-100/80 leading-none block -mb-4">03</span>
+                                <h3 className="text-3xl md:text-4xl font-serif font-medium text-ikemen-text mt-6">VALUE</h3>
+                                <p className="text-sm font-mono text-gray-400 tracking-widest mt-3 uppercase">価値観</p>
                             </div>
-                            <div className="lg:col-span-8 border-l border-gray-200 pl-8 lg:pl-16">
-                                <p className="text-lg text-gray-500 font-serif mb-12">
+                            <div className="lg:col-span-8 lg:border-l lg:border-gray-200 lg:pl-20 pt-4 lg:pt-8">
+                                <p className="text-xl md:text-2xl text-gray-500 font-serif leading-relaxed">
                                     我々が大切にする5つの行動指針
                                 </p>
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
                             {[
                                 {
                                     num: "01",
@@ -289,13 +303,13 @@ const About = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    className="group bg-white/60 backdrop-blur-sm border border-gray-100 p-8 hover:border-ikemen-gold/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
+                                    className="group bg-white/80 backdrop-blur-sm border border-gray-100 p-10 lg:p-12 hover:border-ikemen-gold/30 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-sm"
                                 >
-                                    <span className="text-5xl font-serif font-bold text-gray-100 group-hover:text-ikemen-gold/20 transition-colors duration-500">{value.num}</span>
-                                    <h4 className="text-xl font-serif font-medium text-ikemen-text mt-4 mb-4 group-hover:text-ikemen-gold transition-colors duration-300">
+                                    <span className="text-6xl font-serif font-bold text-gray-100 group-hover:text-ikemen-gold/20 transition-colors duration-500 block mb-6">{value.num}</span>
+                                    <h4 className="text-xl md:text-2xl font-serif font-medium text-ikemen-text mb-6 group-hover:text-ikemen-gold transition-colors duration-300 leading-snug">
                                         「{value.title}」
                                     </h4>
-                                    <p className="text-sm text-gray-500 leading-relaxed font-serif">
+                                    <p className="text-sm md:text-base text-gray-500 leading-[1.9] font-serif">
                                         {value.desc}
                                     </p>
                                 </motion.div>
