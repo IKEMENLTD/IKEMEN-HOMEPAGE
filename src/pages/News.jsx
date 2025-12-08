@@ -6,6 +6,33 @@ import { Calendar, Tag, ArrowRight, ExternalLink } from 'lucide-react';
 const newsData = [
     {
         id: 1,
+        date: '2025.12.08',
+        category: 'RELEASE',
+        title: '自社プロダクト「SEO TURBO」をリリースしました',
+        content: 'AIドリブンSEO最適化プラットフォーム。競合分析、キーワード提案、コンテンツ改善提案をワンストップで提供します。',
+        link: 'https://seoturbo.org/',
+        external: true
+    },
+    {
+        id: 2,
+        date: '2025.12.08',
+        category: 'RELEASE',
+        title: '自社プロダクト「TaskMate AI」をリリースしました',
+        content: 'GPT-4を活用したインテリジェントなタスク管理ツール。自然言語入力で優先度自動判定、サブタスク分解までAIが自動で行います。',
+        link: 'https://taskmateai.net/',
+        external: true
+    },
+    {
+        id: 3,
+        date: '2025.12.08',
+        category: 'RELEASE',
+        title: '自社プロダクト「LiteWEB+」をリリースしました',
+        content: '最短1日納品の高品質Webサイト制作サービス。補助金活用対応で実質負担を大幅削減可能です。',
+        link: 'https://litewebplus.com/',
+        external: true
+    },
+    {
+        id: 4,
         date: '2025.05.22',
         category: 'PRESS',
         title: 'ツナググ（TSUNAGUGU）に弊社のLiteWEB+についての記事が追加されました。',
@@ -13,21 +40,21 @@ const newsData = [
         external: true
     },
     {
-        id: 2,
+        id: 5,
         date: '2024.08.21',
         category: 'PRESS',
         title: '金融系クローズドASP「プロビジョンアフィリエイト」のプレリリースを開始',
         external: false
     },
     {
-        id: 3,
+        id: 6,
         date: '2024.03.22',
         category: 'PRESS',
         title: 'ビッグローブ株式会社と契約締結、パートナーシップの開始',
         external: false
     },
     {
-        id: 4,
+        id: 7,
         date: '2024.02.27',
         category: 'NEWS',
         title: '全省庁統一資格 取得',

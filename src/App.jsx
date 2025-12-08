@@ -187,20 +187,26 @@ const Home = () => (
         </div>
 
         <div className="space-y-4">
-          <a href="https://press.portal-th.com/archives/37552" target="_blank" rel="noopener noreferrer" className="group block relative">
-            <div className="flex flex-col md:flex-row gap-6 items-start md:items-center p-6 hover:bg-white/50 rounded-xl transition-colors duration-300">
-              <div className="flex items-center gap-4 min-w-[140px]">
-                <span className="text-xs text-ikemen-text border border-ikemen-text px-3 py-1 font-medium rounded-full tracking-wider group-hover:bg-ikemen-text group-hover:text-white transition-colors">PRESS</span>
-                <span className="text-gray-400 text-sm font-mono tracking-wider">2025.05.22</span>
+          {[
+            { date: '2025.12.08', category: 'RELEASE', title: '自社プロダクト「SEO TURBO」をリリースしました', url: 'https://seoturbo.org/' },
+            { date: '2025.12.08', category: 'RELEASE', title: '自社プロダクト「TaskMate AI」をリリースしました', url: 'https://taskmateai.net/' },
+            { date: '2025.12.08', category: 'RELEASE', title: '自社プロダクト「LiteWEB+」をリリースしました', url: 'https://litewebplus.com/' },
+          ].map((news, i) => (
+            <a key={i} href={news.url} target="_blank" rel="noopener noreferrer" className="group block relative">
+              <div className="flex flex-col md:flex-row gap-6 items-start md:items-center p-6 hover:bg-white/50 rounded-xl transition-colors duration-300">
+                <div className="flex items-center gap-4 min-w-[140px]">
+                  <span className="text-xs text-cyan-600 border border-cyan-600 px-3 py-1 font-medium rounded-full tracking-wider group-hover:bg-cyan-600 group-hover:text-white transition-colors">{news.category}</span>
+                  <span className="text-gray-400 text-sm font-mono tracking-wider">{news.date}</span>
+                </div>
+                <p className="text-lg text-gray-700 font-serif group-hover:text-ikemen-text transition-colors flex-1 leading-relaxed">
+                  {news.title}
+                </p>
+                <div className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-ikemen-text transition-colors">
+                  <span className="text-gray-400 text-sm group-hover:text-ikemen-text transition-colors">&rarr;</span>
+                </div>
               </div>
-              <p className="text-lg text-gray-700 font-serif group-hover:text-ikemen-text transition-colors flex-1 leading-relaxed">
-                ツナググ（TSUNAGUGU）に弊社のLiteWEB+についての記事が追加されました。
-              </p>
-              <div className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-ikemen-text transition-colors">
-                <span className="text-gray-400 text-sm group-hover:text-ikemen-text transition-colors">&rarr;</span>
-              </div>
-            </div>
-          </a>
+            </a>
+          ))}
         </div>
       </div>
     </section>
