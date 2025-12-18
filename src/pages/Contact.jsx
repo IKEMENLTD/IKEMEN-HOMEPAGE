@@ -11,7 +11,7 @@ const Contact = () => {
         "mainEntity": {
             "@type": "Organization",
             "name": "株式会社イケメン",
-            "telephone": "+81-3-0000-0000",
+            "telephone": "+81-50-8890-8975",
             "contactType": "customer service",
             "areaServed": "JP",
             "availableLanguage": "Japanese"
@@ -90,7 +90,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <p className="text-xs font-mono text-gray-400 tracking-widest uppercase mb-1">PHONE</p>
-                                    <p className="text-xl font-serif text-ikemen-text">03-1234-5678</p>
+                                    <p className="text-xl font-serif text-ikemen-text">050-8890-8975</p>
                                     <p className="text-xs text-gray-400 mt-1">平日 10:00 - 19:00</p>
                                 </div>
                             </div>
@@ -101,9 +101,8 @@ const Contact = () => {
                                 <div>
                                     <p className="text-xs font-mono text-gray-400 tracking-widest uppercase mb-1">OFFICE</p>
                                     <p className="text-lg font-serif text-ikemen-text leading-relaxed">
-                                        〒150-0000<br />
-                                        東京都渋谷区...<br />
-                                        Ikemen Building 3F
+                                        〒141-0032<br />
+                                        東京都品川区大崎４丁目４−２４
                                     </p>
                                 </div>
                             </div>
