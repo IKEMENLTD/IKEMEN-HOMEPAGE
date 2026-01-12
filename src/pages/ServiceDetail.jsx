@@ -179,6 +179,13 @@ const ServiceDetail = () => {
                     desc: "Googleスプレッドシートにキーワードを入力するだけで、AIが記事を自動執筆・SEO最適化・Web公開まで完結。LLMO対応でChatGPTやPerplexityにも引用される記事を生成。",
                     features: ["AI記事自動生成", "SEO/LLMO対応", "内部リンク自動構築", "ワンクリック公開"],
                     url: "https://seoturbo.org/"
+                },
+                {
+                    name: "ワンポチ",
+                    tagline: "ワンクリックでアポイント日時を自動生成",
+                    desc: "無料で使えるアポイント日時提案ツール。ワンポチするだけで、複数の候補日時を自動生成。面倒なスケジュール調整をシンプルに解決します。",
+                    features: ["完全無料", "ワンクリック操作", "複数候補日時生成", "コピペで即共有"],
+                    url: "https://wanpochi.com/"
                 }
             ]
         },
