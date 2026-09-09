@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { SEO } from '../components/SEO';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, BookOpen, CheckCircle2 } from 'lucide-react';
+
+// 採用オウンドメディア（別ドメインで運用）。移設時はここだけ直せば全リンクが追従する。
+const MEDIA_URL = 'https://recruit.ikemen.ltd';
 
 const Recruit = () => {
     const jobs = [
@@ -136,6 +139,58 @@ const Recruit = () => {
                         <iframe loading="lazy" style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0, border: 'none', padding: 0, margin: 0 }}
                             src="https://www.canva.com/design/DAGd6yr3I1g/Yp_fDBtaYujfW0loevczJA/view?embed" allowFullScreen="allowfullscreen" allow="fullscreen">
                         </iframe>
+                    </div>
+                </motion.div>
+
+                {/* Owned Media CTA */}
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="mb-40"
+                >
+                    <div className="relative overflow-hidden border border-slate-800 bg-slate-900 text-white">
+                        {/* Background Decoration */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-slate-800 via-slate-900 to-black pointer-events-none" aria-hidden="true"></div>
+                        <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-ikemen-gold/10 blur-3xl pointer-events-none" aria-hidden="true"></div>
+                        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.07] bg-center pointer-events-none" aria-hidden="true"></div>
+
+                        <div className="relative z-10 px-8 py-16 md:px-16 md:py-24 text-center">
+                            <p className="text-[10px] md:text-xs font-mono tracking-[0.3em] uppercase text-ikemen-gold mb-8">
+                                Owned Media
+                            </p>
+                            <h2 className="text-3xl md:text-5xl font-serif font-medium tracking-tight leading-tight mb-8">
+                                Choose the cool one.
+                            </h2>
+                            <p className="text-sm md:text-base text-slate-300 leading-loose font-serif max-w-xl mx-auto mb-12">
+                                求人票だけでは伝わらない、私たちの中身を。<br className="hidden md:block" />
+                                代表とメンバーの実際の言葉で、事業・文化・働き方を届ける<br className="hidden md:block" />
+                                採用オウンドメディアを運営しています。
+                            </p>
+
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                                <a
+                                    href={`${MEDIA_URL}/interview`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-ikemen-gold text-slate-900 text-sm font-bold tracking-wider hover:bg-white transition-colors duration-300"
+                                >
+                                    <BookOpen size={16} />
+                                    社員インタビューを読む
+                                    <ArrowUpRight size={16} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                </a>
+                                <a
+                                    href={`${MEDIA_URL}/jobs`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 border border-slate-600 text-white text-sm font-bold tracking-wider hover:border-ikemen-gold hover:text-ikemen-gold transition-colors duration-300"
+                                >
+                                    募集中の求人を見る
+                                    <ArrowUpRight size={16} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </motion.div>
 
