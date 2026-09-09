@@ -169,26 +169,20 @@ const Recruit = () => {
                                 採用オウンドメディアを運営しています。
                             </p>
 
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                            <div className="flex flex-col items-center gap-5">
                                 <a
-                                    href={`${MEDIA_URL}/interview`}
+                                    href={MEDIA_URL}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-ikemen-gold text-slate-900 text-sm font-bold tracking-wider hover:bg-white transition-colors duration-300"
+                                    className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-10 py-4 bg-ikemen-gold text-slate-900 text-sm font-bold tracking-wider hover:bg-white transition-colors duration-300"
                                 >
                                     <BookOpen size={16} />
-                                    社員インタビューを読む
+                                    採用オウンドメディアを見る
                                     <ArrowUpRight size={16} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                 </a>
-                                <a
-                                    href={`${MEDIA_URL}/jobs`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 border border-slate-600 text-white text-sm font-bold tracking-wider hover:border-ikemen-gold hover:text-ikemen-gold transition-colors duration-300"
-                                >
-                                    募集中の求人を見る
-                                    <ArrowUpRight size={16} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                                </a>
+                                <p className="text-[10px] md:text-xs font-mono tracking-widest text-slate-500">
+                                    recruit.ikemen.ltd
+                                </p>
                             </div>
                         </div>
                     </div>
