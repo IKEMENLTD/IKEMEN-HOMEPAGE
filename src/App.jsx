@@ -11,7 +11,6 @@ import { SideInterface } from './components/SideInterface'
 import { SystemWidget } from './components/SystemWidget'
 import { OpeningLines } from './lib/ikemen-3d/OpeningLines'
 import { MagneticButton } from './components/MagneticButton'
-import { HeroSpotlight } from './components/HeroSpotlight'
 import { HudOverlay } from './components/HudOverlay'
 import { Works } from './components/Works'
 import { TaskMateFeature } from './components/TaskMateFeature'
@@ -53,53 +52,21 @@ const Home = () => (
     <SEO />
     {/* Hero Content */}
     <section className="w-full min-h-screen flex flex-col items-center justify-center px-6 pt-32 pb-44 relative z-10 overflow-hidden">
-      {/* Vignette & Gradient Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,transparent_0%,rgba(255,255,255,0.8)_100%)] pointer-events-none z-0"></div>
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-white/5 to-white/80 pointer-events-none z-0"></div>
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.05] bg-center bg-fixed pointer-events-none z-0"></div>
-      <HeroSpotlight />
+      <div className="absolute inset-0 bg-white/80 pointer-events-none"></div>
 
-      <div className="text-center pointer-events-auto max-w-6xl relative z-10">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 5.5, ease: "easeOut" }}
-          className="mb-12 flex justify-center"
-        >
-          <img src="/logo.png" alt="IKEMEN Co., Ltd." className="h-12 md:h-24 w-auto drop-shadow-[0_0_25px_rgba(255,255,255,0.8)]" />
-        </motion.div>
-
-        <div className="max-w-3xl mx-auto mb-10 md:mb-14">
-          <p className="text-xs md:text-sm font-mono tracking-widest text-ikemen-gold mb-5">SYSTEM DEVELOPMENT / AI / DX</p>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-ikemen-text leading-tight mb-6">
-            イケメンを構造化する
-          </h1>
-          <p className="text-sm md:text-lg text-slate-600 leading-relaxed">
-            業務の課題整理から、設計・開発、導入後の改善まで。<br className="hidden md:block" />
-            AIとシステム開発で、毎日の仕事をもっとシンプルに。
-          </p>
+      <div className="text-center max-w-3xl relative z-10">
+        <img src="/logo.png" alt="IKEMEN Co., Ltd." className="h-10 md:h-14 w-auto mx-auto mb-8 md:mb-10" />
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-normal text-ikemen-text leading-relaxed tracking-wide">
+          イケメンを構造化する
+        </h1>
+        <div className="mt-10 md:mt-12 flex flex-wrap justify-center gap-x-8 gap-y-4 text-xs md:text-sm text-slate-500">
+          <Link to="/service/system-development" className="hover:text-ikemen-text transition-colors border-b border-slate-300 pb-1">
+            システム開発
+          </Link>
+          <Link to="/contact" className="hover:text-ikemen-text transition-colors border-b border-slate-300 pb-1">
+            お問い合わせ
+          </Link>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 7.5 }}
-          className="flex flex-col md:flex-row gap-8 justify-center items-center"
-        >
-          <MagneticButton>
-            <Link to="/service/system-development" className="group relative block w-64 py-5 bg-ikemen-text/80 backdrop-blur-sm text-white overflow-hidden rounded-full font-bold tracking-widest text-sm shadow-[0_10px_30px_rgba(30,41,59,0.3)] hover:shadow-[0_10px_40px_rgba(6,182,212,0.4)] transition-all duration-500 hover:-translate-y-1">
-              <span className="relative z-10 group-hover:text-ikemen-gold transition-colors duration-300">システム開発について</span>
-              <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]"></div>
-            </Link>
-          </MagneticButton>
-
-          <MagneticButton>
-            <Link to="/contact" className="group relative block w-64 py-5 bg-white/80 backdrop-blur-md text-ikemen-text border border-gray-200 overflow-hidden rounded-full font-bold tracking-widest text-sm shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_40px_rgba(6,182,212,0.2)] transition-all duration-500 hover:-translate-y-1">
-              <span className="relative z-10 group-hover:text-white transition-colors duration-300">開発の相談をする</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-ikemen-gold to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]"></div>
-            </Link>
-          </MagneticButton>
-        </motion.div>
       </div>
 
       {/* Scroll Indicator */}
