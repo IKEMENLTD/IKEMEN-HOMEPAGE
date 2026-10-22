@@ -328,8 +328,8 @@ const About = () => {
                             { label: "代表者", value: "沼倉 隆平" },
                             { label: "設立", value: "令和4年4月19日" },
                             { label: "資本金", value: "300万円" },
-                            { label: "所在地", value: "〒161-0033 東京都新宿区下落合4丁目21-19 目白LKビル5階" },
-                            { label: "事業内容", value: "営業代行業務 / 広告代理店業務 / システム開発" },
+                            { label: "所在地", value: "〒161-0033 東京都新宿区下落合4丁目21-19 目白LKビル2階" },
+                            { label: "事業内容", value: "システム開発（主力事業） / AI・業務自動化・DX支援 / 広告代理店業務 / 営業支援" },
                             { label: "取引銀行", value: "楽天銀行" }
                         ].map((row, i) => (
                             <div key={i} className="flex flex-col md:flex-row py-6 border-b border-gray-100 hover:bg-gray-50 transition-colors px-4">

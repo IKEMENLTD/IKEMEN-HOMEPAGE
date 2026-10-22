@@ -39,7 +39,7 @@ const Legal = () => {
                         </div>
                         <div className="flex flex-col md:flex-row border-b border-gray-200 pb-8">
                             <div className="md:w-1/3 font-bold text-ikemen-text mb-2 md:mb-0">所在地</div>
-                            <div className="md:w-2/3">〒161-0033 東京都新宿区下落合4丁目21-19 目白LKビル5階</div>
+                            <div className="md:w-2/3">〒161-0033 東京都新宿区下落合4丁目21-19 目白LKビル2階</div>
                         </div>
                         <div className="flex flex-col md:flex-row border-b border-gray-200 pb-8">
                             <div className="md:w-1/3 font-bold text-ikemen-text mb-2 md:mb-0">メールアドレス</div>

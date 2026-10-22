@@ -22,8 +22,8 @@ const Contact = () => {
         <div className="w-full min-h-screen bg-white/60 backdrop-blur-md relative overflow-hidden pt-32 pb-40">
             <SEO
                 title="Contact"
-                description="株式会社イケメンへのお問い合わせ。Web制作、システム開発、営業代行など、お気軽にご相談ください。私たちと共に新しい価値を創造しましょう。"
-                keywords="お問い合わせ,Contact,Web制作,システム開発,営業代行,東京,新宿区"
+                description="株式会社イケメンへのお問い合わせ。システム開発、AI活用、業務自動化・DX支援など、お気軽にご相談ください。私たちと共に新しい価値を創造しましょう。"
+                keywords="お問い合わせ,Contact,システム開発,AI活用,DX支援,東京,新宿区"
                 jsonLd={jsonLd}
             />
 
@@ -103,7 +103,7 @@ const Contact = () => {
                                     <p className="text-lg font-serif text-ikemen-text leading-relaxed">
                                         〒161-0033<br />
                                         東京都新宿区下落合4丁目21-19<br />
-                                        目白LKビル5階
+                                        目白LKビル2階
                                     </p>
                                 </div>
                             </div>

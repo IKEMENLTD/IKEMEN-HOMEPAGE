@@ -1,9 +1,9 @@
 import { Helmet } from 'react-helmet-async';
 
 export const SEO = ({ title, description, keywords, image = '/logo.png', url, jsonLd }) => {
-    const siteTitle = '株式会社イケメン | IKEMEN Co., Ltd.';
+    const siteTitle = '株式会社イケメン | システム開発・AI・DX支援';
     const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
-    const defaultDescription = '世の中の「カッコイイ」を再定義し続ける。株式会社イケメンは、WEB制作、システム開発、営業コンサルティングなどを通じて、世の中の価値を最大化します。';
+    const defaultDescription = '株式会社イケメンは、システム開発を主軸に、AI活用・業務自動化・DX支援を行う開発会社です。課題整理から設計・開発・導入・運用改善まで一貫して支援します。';
     const currentUrl = url || (typeof window !== 'undefined' ? window.location.href : '');
 
     return (

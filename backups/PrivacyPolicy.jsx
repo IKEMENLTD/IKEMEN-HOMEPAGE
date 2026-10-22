@@ -71,7 +71,7 @@ const PrivacyPolicy = () => {
                     </p>
                     <div className="bg-gray-50 p-6 rounded-xl mt-6">
                         <p className="font-bold">株式会社イケメン</p>
-                        <p>〒161-0033 東京都新宿区下落合4丁目21-19 目白LKビル5階</p>
+                        <p>〒161-0033 東京都新宿区下落合4丁目21-19 目白LKビル2階</p>
                         <p>代表取締役：沼倉 隆平</p>
                         <p>お問い合わせ：フォームよりご連絡ください</p>
                     </div>

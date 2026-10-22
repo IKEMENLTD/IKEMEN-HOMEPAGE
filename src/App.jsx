@@ -14,6 +14,7 @@ import { MagneticButton } from './components/MagneticButton'
 import { HeroSpotlight } from './components/HeroSpotlight'
 import { HudOverlay } from './components/HudOverlay'
 import { Works } from './components/Works'
+import { TaskMateFeature } from './components/TaskMateFeature'
 import { FAQ } from './components/FAQ'
 import { SEO } from './components/SEO'
 import { TextScramble } from './components/TextScramble'
@@ -51,7 +52,7 @@ const Home = () => (
   <>
     <SEO />
     {/* Hero Content */}
-    <section className="w-full h-screen flex flex-col items-center justify-center p-8 relative z-10 overflow-hidden">
+    <section className="w-full min-h-screen flex flex-col items-center justify-center px-6 pt-32 pb-44 relative z-10 overflow-hidden">
       {/* Vignette & Gradient Overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,transparent_0%,rgba(255,255,255,0.8)_100%)] pointer-events-none z-0"></div>
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-white/5 to-white/80 pointer-events-none z-0"></div>
@@ -68,12 +69,15 @@ const Home = () => (
           <img src="/logo.png" alt="IKEMEN Co., Ltd." className="h-12 md:h-24 w-auto drop-shadow-[0_0_25px_rgba(255,255,255,0.8)]" />
         </motion.div>
 
-        <div className="text-slate-600 text-[10px] sm:text-sm md:text-xl max-w-3xl mx-auto leading-relaxed mb-24 tracking-widest md:tracking-[0.2em] font-medium font-sans whitespace-nowrap overflow-visible">
-          <TextScramble
-            text="Continuing to redefine 'cool' in the world."
-            duration={3000}
-            delay={7000}
-          />
+        <div className="max-w-3xl mx-auto mb-10 md:mb-14">
+          <p className="text-xs md:text-sm font-mono tracking-widest text-ikemen-gold mb-5">SYSTEM DEVELOPMENT / AI / DX</p>
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-ikemen-text leading-tight mb-6">
+            事業を動かす、<br />システムをつくる。
+          </h1>
+          <p className="text-sm md:text-lg text-slate-600 leading-relaxed">
+            業務の課題整理から、設計・開発、導入後の改善まで。<br className="hidden md:block" />
+            AIとシステム開発で、毎日の仕事をもっとシンプルに。
+          </p>
         </div>
 
         <motion.div
@@ -83,15 +87,15 @@ const Home = () => (
           className="flex flex-col md:flex-row gap-8 justify-center items-center"
         >
           <MagneticButton>
-            <Link to="/service" className="group relative block w-64 py-5 bg-ikemen-text/80 backdrop-blur-sm text-white overflow-hidden rounded-full font-bold tracking-widest text-sm shadow-[0_10px_30px_rgba(30,41,59,0.3)] hover:shadow-[0_10px_40px_rgba(6,182,212,0.4)] transition-all duration-500 hover:-translate-y-1">
-              <span className="relative z-10 group-hover:text-ikemen-gold transition-colors duration-300">SERVICE</span>
+            <Link to="/service/system-development" className="group relative block w-64 py-5 bg-ikemen-text/80 backdrop-blur-sm text-white overflow-hidden rounded-full font-bold tracking-widest text-sm shadow-[0_10px_30px_rgba(30,41,59,0.3)] hover:shadow-[0_10px_40px_rgba(6,182,212,0.4)] transition-all duration-500 hover:-translate-y-1">
+              <span className="relative z-10 group-hover:text-ikemen-gold transition-colors duration-300">システム開発について</span>
               <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]"></div>
             </Link>
           </MagneticButton>
 
           <MagneticButton>
             <Link to="/contact" className="group relative block w-64 py-5 bg-white/80 backdrop-blur-md text-ikemen-text border border-gray-200 overflow-hidden rounded-full font-bold tracking-widest text-sm shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_40px_rgba(6,182,212,0.2)] transition-all duration-500 hover:-translate-y-1">
-              <span className="relative z-10 group-hover:text-white transition-colors duration-300">CONTACT</span>
+              <span className="relative z-10 group-hover:text-white transition-colors duration-300">開発の相談をする</span>
               <div className="absolute inset-0 bg-gradient-to-r from-ikemen-gold to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]"></div>
             </Link>
           </MagneticButton>
@@ -111,6 +115,54 @@ const Home = () => (
         </div>
       </motion.div>
     </section>
+
+    {/* Services Section */}
+    <section className="w-full py-40 bg-white/60 backdrop-blur-md relative z-10 overflow-hidden">
+      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.03] bg-center bg-fixed pointer-events-none"></div>
+      <div className="absolute top-40 -left-20 text-[20rem] font-black text-gray-100/40 select-none -z-10 font-sans tracking-tighter leading-none">SERVICE</div>
+
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-24">
+          <h2 className="text-4xl md:text-6xl font-serif font-medium text-ikemen-text mb-6 tracking-widest">SERVICE</h2>
+          <p className="text-ikemen-gold font-mono tracking-[0.5em] text-sm uppercase">System Development & Business Support</p>
+          <p className="mt-6 text-gray-600 leading-relaxed">システム開発を主軸に、事業の成長を支援します。</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { name: 'システム開発事業', en: 'Core Business', id: 'system-development', desc: 'Webシステム / AI活用 / 業務自動化・DX支援' },
+            { name: '広告事業', en: 'Advertising', id: 'advertising', desc: 'Web広告運用 / SNSマーケティング' },
+            { name: '補助金申請代行事業', en: 'Subsidy Support', id: 'subsidy', desc: 'IT導入補助金 / 小規模事業者持続化補助金' }
+          ].map((service, i) => (
+            <Link to={`/service/${service.id}`} key={i} className="group relative bg-white/40 backdrop-blur-sm border border-gray-100 p-10 h-80 flex flex-col justify-between hover:border-ikemen-gold/30 transition-all duration-500 shadow-sm hover:shadow-xl hover:-translate-y-2 rounded-sm overflow-hidden">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-gray-50 to-transparent rounded-bl-full -mr-20 -mt-20 transition-transform group-hover:scale-150 duration-700"></div>
+
+              <div className="relative z-10">
+                <span className="text-6xl font-serif text-gray-100 group-hover:text-ikemen-gold/10 transition-colors duration-500">0{i + 1}</span>
+              </div>
+
+              <div className="relative z-10 mt-auto">
+                <h3 className="text-2xl font-serif font-medium text-ikemen-text group-hover:text-ikemen-gold transition-colors mb-2">{service.name}</h3>
+                <p className="text-xs font-mono text-gray-400 tracking-widest uppercase mb-4">{service.en}</p>
+                <p className="text-sm text-gray-500 font-serif">{service.desc}</p>
+
+                <div className="w-full h-px bg-gray-200 mt-8 group-hover:bg-ikemen-gold transition-colors duration-500 relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-full h-full bg-ikemen-gold transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        <div className="text-center mt-24">
+          <Link to="/service" className="inline-block px-12 py-4 border border-gray-300 text-ikemen-text/80 font-bold rounded-full hover:border-ikemen-text hover:bg-ikemen-text/80 hover:text-white transition-all duration-300 tracking-widest text-sm">
+            VIEW ALL SERVICES
+          </Link>
+        </div>
+      </div>
+    </section>
+
+    <TaskMateFeature />
 
     {/* Mission Section */}
     <section className="w-full py-40 bg-white/60 backdrop-blur-md relative z-10 overflow-hidden">
@@ -211,51 +263,6 @@ const Home = () => (
       </div>
     </section>
 
-    {/* Services Section */}
-    <section className="w-full py-40 bg-white/60 backdrop-blur-md relative z-10 overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.03] bg-center bg-fixed pointer-events-none"></div>
-      <div className="absolute top-40 -left-20 text-[20rem] font-black text-gray-100/40 select-none -z-10 font-sans tracking-tighter leading-none">SERVICE</div>
-
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-24">
-          <h2 className="text-4xl md:text-6xl font-serif font-medium text-ikemen-text mb-6 tracking-widest">SERVICE</h2>
-          <p className="text-ikemen-gold font-mono tracking-[0.5em] text-sm uppercase">Business Activities</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { name: '広告事業', en: 'Advertising', id: 'advertising', desc: 'Web広告運用 / SNSマーケティング' },
-            { name: 'システム開発事業', en: 'System Development', id: 'system-development', desc: 'Webシステム開発 / アプリ開発' },
-            { name: '補助金申請代行事業', en: 'Subsidy Support', id: 'subsidy', desc: 'IT導入補助金 / 小規模事業者持続化補助金' }
-          ].map((service, i) => (
-            <Link to={`/service/${service.id}`} key={i} className="group relative bg-white/40 backdrop-blur-sm border border-gray-100 p-10 h-80 flex flex-col justify-between hover:border-ikemen-gold/30 transition-all duration-500 shadow-sm hover:shadow-xl hover:-translate-y-2 rounded-sm overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-gray-50 to-transparent rounded-bl-full -mr-20 -mt-20 transition-transform group-hover:scale-150 duration-700"></div>
-
-              <div className="relative z-10">
-                <span className="text-6xl font-serif text-gray-100 group-hover:text-ikemen-gold/10 transition-colors duration-500">0{i + 1}</span>
-              </div>
-
-              <div className="relative z-10 mt-auto">
-                <h3 className="text-2xl font-serif font-medium text-ikemen-text group-hover:text-ikemen-gold transition-colors mb-2">{service.name}</h3>
-                <p className="text-xs font-mono text-gray-400 tracking-widest uppercase mb-4">{service.en}</p>
-                <p className="text-sm text-gray-500 font-serif">{service.desc}</p>
-
-                <div className="w-full h-px bg-gray-200 mt-8 group-hover:bg-ikemen-gold transition-colors duration-500 relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-full h-full bg-ikemen-gold transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        <div className="text-center mt-24">
-          <Link to="/service" className="inline-block px-12 py-4 border border-gray-300 text-ikemen-text/80 font-bold rounded-full hover:border-ikemen-text hover:bg-ikemen-text/80 hover:text-white transition-all duration-300 tracking-widest text-sm">
-            VIEW ALL SERVICES
-          </Link>
-        </div>
-      </div>
-    </section>
-
     <Works />
 
     {/* Contact Section */}
@@ -338,8 +345,8 @@ function App() {
       <div className="bg-white min-h-screen relative overflow-hidden font-sans selection:bg-ikemen-gold selection:text-white">
         <SEO
           title="Home"
-          description="株式会社イケメンは、世の中の「カッコイイ」を再定義し続けるクリエイティブカンパニーです。WEB制作、システム開発、マーケティング支援を通じて、クライアントの価値を最大化します。"
-          keywords="株式会社イケメン,WEB制作,システム開発,営業代行,マーケティング,デザイン,東京"
+          description="株式会社イケメンは、システム開発を主軸に、AI活用・業務自動化・DX支援を行う開発会社です。課題整理から設計・開発・導入・運用改善まで一貫して支援します。"
+          keywords="株式会社イケメン,システム開発,AI開発,業務自動化,DX支援,TaskMate,東京"
           jsonLd={jsonLd}
         />
 
