@@ -35,8 +35,8 @@ const Legal = () => {
                         <div className="flex flex-col md:flex-row p-6 hover:bg-gray-50 transition-colors">
                             <dt className="w-full md:w-1/3 font-bold text-ikemen-text mb-2 md:mb-0">所在地</dt>
                             <dd className="w-full md:w-2/3 text-gray-600">
-                                〒104-0051<br />
-                                東京都品川区大崎4丁目4-24
+                                〒161-0033<br />
+                                東京都新宿区下落合4丁目21-19 目白LKビル5階
                             </dd>
                         </div>
                         <div className="flex flex-col md:flex-row p-6 hover:bg-gray-50 transition-colors">
