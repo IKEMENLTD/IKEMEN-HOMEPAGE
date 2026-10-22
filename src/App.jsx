@@ -72,7 +72,7 @@ const Home = () => (
         <div className="max-w-3xl mx-auto mb-10 md:mb-14">
           <p className="text-xs md:text-sm font-mono tracking-widest text-ikemen-gold mb-5">SYSTEM DEVELOPMENT / AI / DX</p>
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-ikemen-text leading-tight mb-6">
-            事業を動かす、<br />システムをつくる。
+            イケメンを構造化する
           </h1>
           <p className="text-sm md:text-lg text-slate-600 leading-relaxed">
             業務の課題整理から、設計・開発、導入後の改善まで。<br className="hidden md:block" />
