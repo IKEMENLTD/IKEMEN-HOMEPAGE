@@ -174,11 +174,11 @@ const ServiceDetail = () => {
                     noPreview: true
                 },
                 {
-                    name: "SEO TURBO",
-                    tagline: "スプレッドシート入力だけでSEO記事を自動生成",
-                    desc: "Googleスプレッドシートにキーワードを入力するだけで、AIが記事を自動執筆・SEO最適化・Web公開まで完結。LLMO対応でChatGPTやPerplexityにも引用される記事を生成。",
-                    features: ["AI記事自動生成", "SEO/LLMO対応", "内部リンク自動構築", "ワンクリック公開"],
-                    url: "https://seoturbo.org/"
+                    name: "無料開発DX",
+                    tagline: "最初の業務システムを、企画・設計・開発まで0円で",
+                    desc: "年商1億円以上の企業様を対象に、業務システムを1本無料で開発します（所定の審査あり・事前に合意した範囲）。追加開発・改修は必要なときだけ有償。サーバー費用・API利用料等が別途発生する場合があります。",
+                    features: ["初回1システム無料", "企画・設計・開発", "仕様未定でも相談可能", "継続契約の義務なし"],
+                    url: "https://dx.ikemen.ltd/"
                 },
                 {
                     name: "ワンポチ",
