@@ -1,11 +1,29 @@
 import { Canvas } from '@react-three/fiber'
-import { Environment, OrbitControls } from '@react-three/drei'
-import { Suspense } from 'react'
+import { Environment } from '@react-three/drei'
+import { Component, Suspense } from 'react'
+
+const SceneFallback = () => (
+    <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-cyan-50/60 via-white/20 to-slate-100/50" />
+)
+
+class SceneBoundary extends Component {
+    state = { failed: false }
+
+    static getDerivedStateFromError() {
+        return { failed: true }
+    }
+
+    render() {
+        return this.state.failed ? <SceneFallback /> : this.props.children
+    }
+}
 
 export const Scene = ({ children, className = "absolute inset-0 z-0" }) => {
     return (
         <div className={className}>
+            <SceneBoundary>
             <Canvas
+                fallback={<SceneFallback />}
                 camera={{ position: [0, 0, 5], fov: 45 }}
                 gl={{ antialias: true, alpha: true }}
                 dpr={[1, 2]}
@@ -19,6 +37,7 @@ export const Scene = ({ children, className = "absolute inset-0 z-0" }) => {
                     <Environment preset="city" />
                 </Suspense>
             </Canvas>
+            </SceneBoundary>
         </div>
     )
 }
